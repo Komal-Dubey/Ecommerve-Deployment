@@ -179,7 +179,7 @@ export const testController = (req, res) => {
 //update prfole
 export const updateProfileController = async (req, res) => {
   try {
-    const { name, email, password, address, phone } = req.body;
+    const { name, email, password,country,state,city, address, phone } = req.body;
     const user = await userModel.findById(req.user._id);
     //password
     if (password && password.length < 6) {
@@ -192,6 +192,9 @@ export const updateProfileController = async (req, res) => {
         name: name || user.name,
         password: hashedPassword || user.password,
         phone: phone || user.phone,
+        country: country || user.country,
+        state: state || user.state,
+        city: city || user.city,
         address: address || user.address,
       },
       { new: true }
@@ -205,7 +208,7 @@ export const updateProfileController = async (req, res) => {
     console.log(error);
     res.status(400).send({
       success: false,
-      message: "Error WHile Update profile",
+      message: "Error While Update profile",
       error,
     });
   }
