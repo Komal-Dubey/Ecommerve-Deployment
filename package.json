@@ -1,5 +1,5 @@
 {
-  "name": "ecommerce-app-2023",
+  "name": "ecommerce-app",
   "version": "1.0.0",
   "description": "ecommerce rest api",
   "main": "server.js",
@@ -11,7 +11,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
-  "author": "Techinfoyt",
+  "author": "Komal-Dubey",
   "license": "MIT",
   "dependencies": {
     "@sendgrid/mail": "^7.7.0",
